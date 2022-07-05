@@ -13,12 +13,12 @@ export const tags = [
 export const vendors = [
     {
         id         : '1',
-        nom : 'gaddour',
-        prenom :'sirine',
-        email:'syrinagaddour11@gmail.com',
+        nom : 'exemple',
+        prenom :'exemple',
+        email:'exemple@gmail.com',
         
-        date: '13/03/1999',
-        numero:'53104289',
+        date: 'exemple',
+        numero:'exemple',
         cin:'00001111',
         specialite:'multimedia',
         niveau:'3eme',
@@ -30,33 +30,33 @@ export const vendors = [
 export const products = [
     {
         id         : '10',
-        nom : 'gaddour',
-        prenom :'sirine',
-        email:'syrinagaddour11@gmail.com',
+        nom : 'exemple',
+        prenom :'exemple',
+        email:'exemple@gmail.com',
         role : 'utilisateur',
       
     },
     {
         id         : '1',
-        nom : 'gaddour',
-        prenom :'sirine',
-        email:'syrinagaddour11@gmail.com',
+        nom : 'exemple',
+        prenom :'exemple',
+        email:'exemple@gmail.com',
         role : 'utilisateur',
       
     },
     {
         id         : '2',
-        nom : 'gaddour',
-        prenom :'sirine',
-        email:'syrinagaddour11@gmail.com',
+        nom : 'exemple',
+        prenom :'exemple',
+        email:'exemple@gmail.com',
         role : 'utilisateur',
       
     },
     {
         id         : '3',
-        nom : 'gaddour',
-        prenom :'sirine',
-        email:'syrinagaddour11@gmail.com',
+        nom : 'exemple',
+        prenom :'exemple',
+        email:'exemple@gmail.com',
         role : 'admin',
       
     },

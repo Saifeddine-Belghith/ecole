@@ -1,3 +1,50 @@
-<p>
-  addcours works!
-</p>
+<div class="flex flex-col flex-auto min-w-4" style="margin: 30px 30px;">
+
+
+  <form class="flex flex-col mt-10 p-10 pb-8 bg-card rounded-2xl shadow overflow-hidden">
+  <div class="mt-4 text-4xl font-extrabold tracking-tight leading-tight">Ajouter cours</div>
+    <br><br>
+   
+  
+    
+    <mat-form-field
+            [ngClass]="formFieldHelpers"
+            class="flex-auto gt-xs:pr-3">
+            <mat-label>Nom chapitre</mat-label>
+            <input matInput 
+            >
+            <mat-icon
+                class="icon-size-5"
+                matSuffix
+                [svgIcon]="''"></mat-icon>
+        </mat-form-field>
+        <div class="flex">
+            <mat-form-field
+          [ngClass]="formFieldHelpers"
+          class="flex-auto gt-xs:pr-3">
+          <mat-label>Nom exercice</mat-label>
+          <input matInput 
+          >
+          <mat-icon
+              class="icon-size-5"
+              matSuffix
+              [svgIcon]="''"></mat-icon>
+      </mat-form-field>
+      </div>
+   <div>
+      <button
+      mat-flat-button
+      [color]="'primary'">
+      <mat-icon [svgIcon]="'heroicons_outline:plus'"></mat-icon>
+      <span class="ml-2 mr-1">Ajouter cours</span>
+     </button>
+    </div>
+
+    <br>
+    <div class="row" class="contains">
+    <button mat-raised-button color="primary">Ajouter</button>
+    <button mat-stroked-button>Annuler</button>
+  </div>
+  </form>
+  </div>
+

@@ -1,0 +1,95 @@
+<div class="flex flex-col flex-auto min-w-0  ">
+
+    <!-- Header -->
+    <div
+        class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-2 sm:px-10 border-b bg-card dark:bg-transparent ">
+        <div class="flex-1 min-w-0">
+            <!-- Breadcrumbs -->
+            <div class="flex flex-wrap items-center font-medium">
+                <div>
+                    <a class="whitespace-nowrap text-primary-500" *transloco="let t">
+                         {{ t('User Interface') }}</a>
+                </div>
+                <div class="flex items-center ml-1 whitespace-nowrap">
+                    <mat-icon class="icon-size-5 text-secondary" [svgIcon]="'heroicons_solid:chevron-right'"></mat-icon>
+                    <a class="ml-1 text-primary-500" *transloco="let t">{{ t('Forms') }}</a>
+                </div>
+            </div>
+            <!-- Title -->
+            <div class="mt-2">
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate"
+                 *transloco="let t">
+                         {{ t('edit User') }}
+
+                </h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main -->
+    <div class="flex-auto p-2 sm:p-10 h-44 leading-none overflow-y-auto ">
+
+        <div class="max-w-12xl">
+            <form [formGroup]=form   class="flex flex-col mt-8 p-8 pb-4 bg-card rounded-2xl shadow overflow-hidden">
+                <div class="flex flex-col gt-xs:flex-row" *transloco="let t">
+                    <mat-form-field  class="flex-auto gt-xs:pr-3" appearance="fill">
+                        <mat-label>{{ t('firstName') }}</mat-label>
+                        <input name="firstName" id="firstName" matInput type="text"  formControlName="firstName" >
+                        <mat-icon class="icon-size-5" matSuffix [svgIcon]="'heroicons_solid:user-circle'"></mat-icon>
+                    </mat-form-field>
+                    <mat-form-field [ngClass]="formFieldHelpers" class="flex-auto gt-xs:pl-3">
+                        <mat-label>{{ t('lastName') }}</mat-label>
+                        <input matInput name="lastName" matInput formControlName="lastName">
+                        <mat-icon class="icon-size-5" matSuffix [svgIcon]="'heroicons_solid:user-circle'"></mat-icon>
+                    </mat-form-field>
+                </div>
+
+                <div class="flex">
+                    <mat-form-field  class="flex-auto">
+                        <mat-label *transloco="let t">{{ t('role') }}</mat-label>
+                        <mat-select name="role"  formControlName="roleId" >
+                            <mat-option *ngFor="let role of roles" [value]="role.Id" >
+                                {{role.title}}
+                            </mat-option>
+                        </mat-select>
+                
+                    </mat-form-field>
+                </div>
+
+                <div class="flex">
+                    <mat-form-field [ngClass]="formFieldHelpers" class="flex-auto">
+                        <mat-label *transloco="let t">{{ t('email') }}</mat-label>
+                        <input matInput #postalCode name="email" matInput formControlName="email">
+                        <mat-icon class="icon-size-5" matSuffix [svgIcon]="'heroicons_solid:mail'"></mat-icon>
+                    </mat-form-field>
+                </div>
+                <div class="flex">
+                    <mat-form-field [ngClass]="formFieldHelpers" class="flex-auto">
+                        <mat-label *transloco="let t">{{ t('password') }}</mat-label>
+                        <input matInput  name="password" matInput formControlName="password">
+                        <mat-icon class="icon-size-5" matSuffix [svgIcon]="'heroicons_solid:'"></mat-icon>
+                    </mat-form-field>
+                </div>
+                <div  style="width: 20%;">
+                    
+                        <mat-label *transloco="let t">{{ t('photo') }}</mat-label>
+                        <img [src]="photo" height="250px" width="200px">
+                        <input type="file"  name="photo" (change)="uplodPhoto($event)" >
+                        
+                   
+                </div>
+                <div class="flex items-center justify-end border-t -mx-8 mt-8 px-8 py-5 bg-gray-50 dark:bg-gray-700">
+                    
+                    <button mat-flat-button [color]="'warn'" style="margin-right: 4px;" *transloco="let t" routerLink="/user/user-list">
+                        {{ t('Cancel') }}
+                    </button>
+                    <button type="submit" [color]="'primary'" [disabled]="!form.valid" mat-flat-button (click)="onSubmit(f)"
+                        *transloco="let t">
+                        {{ t('Save') }}
+                    
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

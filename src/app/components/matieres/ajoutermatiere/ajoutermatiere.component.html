@@ -1,0 +1,59 @@
+<div class="flex flex-col flex-auto min-w-4" style="margin: 30px 30px;">
+<form class="flex flex-col mt-10 p-10 pb-8 bg-card rounded-2xl shadow overflow-hidden">
+    <div class="mt-4 text-4xl font-extrabold tracking-tight leading-tight">Ajouter Matiere</div>
+      <br><br>
+     
+    
+      
+     
+          <div class="flex">
+            <mat-form-field class="flex-auto gt-xs:pl-3">
+              <mat-select [placeholder]="'Spécialité'">
+                <mat-option value="Spécialité">Spécialité</mat-option>
+                  <mat-option value="Spécialité1">Spécialité 1</mat-option>
+                  <mat-option value="Spécialité2">Spécialité 2</mat-option>
+                  <mat-option value="Spécialité3">Spécialité 3</mat-option>
+              </mat-select>
+              <mat-icon
+                  class="icon-size-5"
+                  matPrefix
+                  [svgIcon]="'heroicons_solid:academic-cap'"></mat-icon>
+          </mat-form-field>
+  
+          <mat-form-field class="flex-auto gt-xs:pl-3">
+            <mat-select [placeholder]="'Niveau'">
+              <mat-option value="Niveau">Niveau</mat-option>
+                <mat-option value="Niveau1">Niveau 1</mat-option>
+                <mat-option value="Niveau2">Niveau 2</mat-option>
+                <mat-option value="Niveau3">Niveau 3</mat-option>
+            </mat-select>
+            <mat-icon
+                class="icon-size-5"
+                matPrefix
+                [svgIcon]="'heroicons_solid:bookmark'"></mat-icon>
+        </mat-form-field>
+  
+  
+        </div>
+     
+        <mat-form-field
+        [ngClass]="formFieldHelpers"
+        class="flex-auto gt-xs:pr-3">
+        <mat-label>matiere</mat-label>
+        <input matInput 
+        >
+        <mat-icon
+            class="icon-size-5"
+            matSuffix
+            [svgIcon]="''"></mat-icon>
+    </mat-form-field>
+      
+      <br>
+      <div class="row" class="contains">
+      <button mat-raised-button color="primary">Ajouter</button>
+      <button mat-stroked-button>Annuler</button>
+    </div>
+    </form>
+    </div>
+  
+  

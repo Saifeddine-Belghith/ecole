@@ -1,5 +1,4 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
 
 
 @Component({
@@ -9,7 +8,7 @@ import { FormBuilder } from '@angular/forms';
 })
 export class AjouterclasseComponent  {
   formFieldHelpers: string[] = [''];
-  constructor(private _formBuilder: FormBuilder) { }
+  constructor() { }
 
   ngOnInit(): void {
   }

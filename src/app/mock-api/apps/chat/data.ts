@@ -6,16 +6,16 @@ import * as moment from 'moment';
  * to keep the demo data maintainable.
  */
 const _attachments = {
-    media: [
-        'assets/images/cards/01-320x200.jpg',
-        'assets/images/cards/02-320x200.jpg',
-        'assets/images/cards/03-320x200.jpg',
-        'assets/images/cards/04-320x200.jpg',
-        'assets/images/cards/05-320x200.jpg',
-        'assets/images/cards/06-320x200.jpg',
-        'assets/images/cards/07-320x200.jpg',
-        'assets/images/cards/08-320x200.jpg'
-    ],
+    media: ['assets/images/cards/01-320x200.jpg',
+    'assets/images/cards/02-320x200.jpg',
+    'assets/images/cards/03-320x200.jpg',
+    'assets/images/cards/04-320x200.jpg',
+    'assets/images/cards/05-320x200.jpg',
+    'assets/images/cards/06-320x200.jpg',
+    'assets/images/cards/07-320x200.jpg',
+    'assets/images/cards/08-320x200.jpg'
+],
+        
     docs : [],
     links: []
 };

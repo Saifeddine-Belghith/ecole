@@ -1,8 +1,8 @@
-<div class="flex flex-col flex-auto min-w-4">
+<div class="flex flex-col flex-auto min-w-4" style="margin: 30px 30px;">
 
 
   <form class="flex flex-col mt-10 p-10 pb-8 bg-card rounded-2xl shadow overflow-hidden">
-  <div class="mt-4 text-4xl font-extrabold tracking-tight leading-tight">Ajouter Enseignant</div>
+  <div class="mt-4 text-4xl font-extrabold tracking-tight leading-tight">Ajouter Employes</div>
     <br><br>
   <div class="flex flex-col gt-xs:flex-row">
         <mat-form-field
@@ -78,7 +78,7 @@
       
       <div class="flex items-center -my-px py-2 px-3">
           
-        <mat-label class="flex-auto gt-md:pr-3">Matieres</mat-label>
+        <mat-label class="flex-auto gt-md:pr-3">Type</mat-label>
       </div>
       
       <div class="h-44 leading-none overflow-y-auto border-t border-gray-100dark:border-gray-100">
@@ -86,31 +86,20 @@
           <div  class="flex items-center h-10 min-h-10 px-4"
           class="relative flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between py-8 px-6 md:px-8 border-b">
             
-                <div> <mat-checkbox [color]="'primary'" class="exemple-margin"> reseaux</mat-checkbox> </div>
-                 <mat-checkbox [color]="'primary'" class="exemple-margin"> SOA</mat-checkbox> 
-                 <mat-checkbox [color]="'primary'" class="exemple-margin"> Linux</mat-checkbox> 
+                <div> <mat-checkbox [color]="'primary'" class="exemple-margin"> Directeur</mat-checkbox> </div>
+                 <mat-checkbox [color]="'primary'" class="exemple-margin"> Directeur général</mat-checkbox> 
+                 
           </div>
-          <div class="flex items-center h-10 min-h-10 px-4"
-          class="relative flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between py-8 px-6 md:px-8 border-b">
-                 <mat-checkbox [color]="'primary'" class="exemple-margin"> D.Web</mat-checkbox> 
-                 <mat-checkbox [color]="'primary'" class="exemple-margin"> Cloud</mat-checkbox> 
-                 <mat-checkbox [color]="'primary'" class="exemple-margin"> Big data</mat-checkbox> 
-            </div>
-            <div class="flex items-center h-10 min-h-10 px-4"
-            class="relative flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between py-8 px-6 md:px-8 border-b">
-                 <mat-checkbox [color]="'primary'" class="exemple-margin"> Anglais</mat-checkbox> 
-                 <mat-checkbox [color]="'primary'" class="exemple-margin"> Jeux video</mat-checkbox> 
-                 <mat-checkbox [color]="'primary'" class="exemple-margin"> Maillage</mat-checkbox> 
-            
          
-       </div>     
+                
         
         
       </div>
   </div>
 
 
-    <br>
+  <br>
+  <div class="row" class="contains">
     <button mat-raised-button color="primary">Ajouter</button>
-  </form>
+    <button mat-stroked-button>Annuler</button>
   </div>

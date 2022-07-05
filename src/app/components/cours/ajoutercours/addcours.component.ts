@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddcoursComponent implements OnInit {
 
+ 
+  formFieldHelpers: string[] = [''];
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
-
+  getFormFieldHelpersAsString(): string
+  {
+      return this.formFieldHelpers.join(' ');
+  }
 }

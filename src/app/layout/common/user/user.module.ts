@@ -23,4 +23,10 @@ import { SharedModule } from 'app/shared/shared.module';
 })
 export class UserModule
 {
+  getRoleUser() {
+    throw new Error('Method not implemented.');
+  }
+  ajouteruser(val: { firstName: any; lastName: any; email: any; password: any; roleId: any; photoName: string; }) {
+    throw new Error('Method not implemented.');
+  }
 }

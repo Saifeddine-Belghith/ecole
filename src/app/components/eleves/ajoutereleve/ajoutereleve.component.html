@@ -1,4 +1,4 @@
-<div class="flex flex-col flex-auto min-w-4">
+<div class="flex flex-col flex-auto min-w-4" style="margin: 30px 30px;">
 
 
   <form class="flex flex-col mt-10 p-10 pb-8 bg-card rounded-2xl shadow overflow-hidden">
@@ -15,6 +15,8 @@
                 matSuffix
                 [svgIcon]="'heroicons_solid:user-circle'"></mat-icon>
         </mat-form-field>
+
+      
         <mat-form-field
             [ngClass]="formFieldHelpers"
             class="flex-auto gt-xs:pl-3">
@@ -25,6 +27,26 @@
                 matSuffix
                 [svgIcon]="'heroicons_solid:user-circle'"></mat-icon>
         </mat-form-field>
+
+        <mat-form-field
+        [ngClass]="formFieldHelpers"
+        class="flex-auto gt-xs:pr-3">
+        <mat-label>Parents</mat-label>
+        <input matInput>
+        <mat-icon
+            class="icon-size-5"
+            matSuffix
+            [svgIcon]="'heroicons_solid:user-circle'"></mat-icon>
+    </mat-form-field>
+
+    <mat-form-field class="flex-auto gt-xs:pl-3">
+      <mat-select [placeholder]="'Sexe'">
+        <mat-option value="Spécialité">Hommes</mat-option>
+          <mat-option value="Spécialité1">Femmes</mat-option>
+         
+      </mat-select>
+      
+  </mat-form-field>
     </div>
     <mat-form-field appearance="fill">
       <mat-label>Date Naissance</mat-label>
@@ -44,33 +66,43 @@
                 [svgIcon]="'heroicons_solid:mail'"></mat-icon>
         </mat-form-field>
     <div class="flex flex-col gt-md:flex-row">
-        <mat-form-field
-            [ngClass]="formFieldHelpers"
-            class="flex-auto gt-md:pr-3">
-            <mat-label>Numero</mat-label>
-            <input matInput>
-            <mat-icon
-                class="icon-size-5"
-                matSuffix
-                [svgIcon]="'heroicons_solid:phone'"></mat-icon>
-        </mat-form-field>
+      <mat-form-field
+      [ngClass]="formFieldHelpers"
+      class="flex-auto">
+      <mat-label>CIN</mat-label>
+      <input
+          matInput
+          maxlength="8"
+          #postalCode>
+      <mat-hint align="end">{{postalCode.value.length}} / 8</mat-hint>
+      <mat-icon
+          class="icon-size-5"
+          matSuffix
+          [svgIcon]="'heroicons_solid:identification'"></mat-icon>
+  </mat-form-field>
+        
         
     </div>
     <div class="flex">
-        <mat-form-field
-            [ngClass]="formFieldHelpers"
-            class="flex-auto">
-            <mat-label>CIN</mat-label>
-            <input
-                matInput
-                maxlength="8"
-                #postalCode>
-            <mat-hint align="end">{{postalCode.value.length}} / 8</mat-hint>
-            <mat-icon
-                class="icon-size-5"
-                matSuffix
-                [svgIcon]="'heroicons_solid:identification'"></mat-icon>
+      <form class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Numero</mat-label>
+          <span matPrefix>+126 &nbsp;</span>
+          <input type="tel" matInput placeholder="555-555-1234">
+          <mat-icon matSuffix>mode_edit</mat-icon>
         </mat-form-field>
+      </form>
+
+        <mat-form-field
+        [ngClass]="formFieldHelpers"
+        class="flex-auto gt-xs:pr-3">
+        <mat-label>Adresse</mat-label>
+        <input matInput>
+        <mat-icon
+            class="icon-size-5"
+            matSuffix
+            [svgIcon]="'heroicons_solid:user-circle'"></mat-icon>
+    </mat-form-field>
     </div>
     <mat-form-field class="flex-auto gt-xs:pl-3">
       <mat-select [placeholder]="'Spécialité'">
@@ -110,7 +142,19 @@
       matPrefix
       [svgIcon]="'heroicons_solid:book-open'"></mat-icon>
 </mat-form-field>
-    <br>
-    <button mat-raised-button color="primary">Ajouter</button>
-  </form>
-  </div>
+
+<mat-form-field
+[ngClass]="formFieldHelpers"
+class="flex-auto gt-xs:pr-3">
+<mat-label>Activité extra scolaire</mat-label>
+<input matInput>
+<mat-icon
+    class="icon-size-5"
+    matSuffix
+    [svgIcon]="''"></mat-icon>
+</mat-form-field>
+<br>
+<div class="row" class="contains">
+  <button mat-raised-button color="primary">Ajouter</button>
+  <button mat-stroked-button>Annuler</button>
+</div>

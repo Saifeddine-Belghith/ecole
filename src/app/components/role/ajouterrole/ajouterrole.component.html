@@ -1,45 +1,65 @@
-<div class="flex flex-col flex-auto min-w-4">
+<div class="flex flex-col flex-auto min-w-0">
 
+  <!-- Header -->
+  <div
+      class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-2 sm:px-10 border-b bg-card dark:bg-transparent">
+      <div class="flex-1 min-w-0">
+          <!-- Breadcrumbs -->
+          <div class="flex flex-wrap items-center font-medium">
+              <div>
+                  <a class="whitespace-nowrap text-primary-500" *transloco="let t">
+                      {{ t('Roles Interface') }}</a>
+              </div>
+              <div class="flex items-center ml-1 whitespace-nowrap">
+                  <mat-icon class="icon-size-5 text-secondary" [svgIcon]="'heroicons_solid:chevron-right'"></mat-icon>
+                  <a class="ml-1 text-primary-500" *transloco="let t">{{ t('Forms') }}</a>
+              </div>
+          </div>
+          <!-- Title -->
+          <div class="mt-2">
+              <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate"
+              *transloco="let t">
+                  {{ t('Add Roles') }}
+              </h2>
+          </div>
+      </div>
+  </div>
 
-    <form class="flex flex-col mt-10 p-10 pb-8 bg-card rounded-2xl shadow overflow-hidden">
-    <div class="mt-4 text-4xl font-extrabold tracking-tight leading-tight">Ajouter Role</div>
-      <br><br>
-     
-    
-      
-      <mat-form-field
-              [ngClass]="formFieldHelpers"
-              class="flex-auto gt-xs:pr-3">
-              <mat-label>Titre</mat-label>
-              <input matInput 
-              >
-              <mat-icon
-                  class="icon-size-5"
-                  matSuffix
-                  [svgIcon]="''"></mat-icon>
-          </mat-form-field>
-          <div class="flex">
-            <mat-form-field
-                [ngClass]="formFieldHelpers"
-                class="fuse-mat-textarea flex-auto">
-                <mat-label>Description</mat-label>
-                <textarea
-                    matInput
-                    [rows]="3"
-                    matTextareaAutosize></textarea>
-                <mat-icon
-                    class="icon-size-5"
-                    matSuffix
-                    [svgIcon]="''"></mat-icon>
-            </mat-form-field>
-        </div>
-     
-      
-      <br>
-      <div class="row" class="contains">
-      <button mat-raised-button color="primary">Ajouter</button>
-      <button mat-stroked-button>Annuler</button>
-    </div>
-    </form>
-    </div>
+  <!-- Main -->
+  <div class="flex-auto p-2 sm:p-10 h-44 leading-none overflow-y-auto">
 
+      <div class="max-w-8xl" >
+          <form #f=ngForm class="flex flex-col mt-8 p-8 pb-4 bg-card rounded-2xl shadow overflow-hidden">
+              <div class="flex flex-col gt-xs:flex-row" *transloco="let t">
+                  <mat-form-field [ngClass]="formFieldHelpers" class="flex-auto gt-xs:pr-3">
+                      <mat-label> {{ t('title') }}</mat-label>
+                      <input name="title" matInput ngModel required #title="ngModel">
+                      <mat-icon class="icon-size-5" matSuffix [svgIcon]="'heroicons_solid:user-circle'"></mat-icon>
+                  </mat-form-field><span style="color: red" *ngIf="!title.valid && title.touched">N'oubliez
+                      pas le {{ t('title') }}</span>
+              </div>
+              <div class="flex flex-col gt-xs:flex-row" *transloco="let t">
+                  <mat-form-field [ngClass]="formFieldHelpers" class="fuse-mat-textarea flex-auto">
+                      <mat-label>{{ t('description') }}</mat-label>
+                      <textarea matInput [rows]="3" matTextareaAutosize name="description" matInput ngModel required
+                          #description="ngModel"></textarea>
+                      <mat-icon class="icon-size-5" matSuffix [svgIcon]="'heroicons_solid:location-marker'">
+                      </mat-icon>
+                  </mat-form-field>
+              <span style="color: red" *ngIf="!description.valid && description.touched">N'oubliez pas le {{ t('description') }}</span>
+          </div>
+              <div class="flex items-center justify-end border-t -mx-8 mt-8 px-8 py-5 bg-gray-50 dark:bg-gray-700">
+              <button mat-flat-button [color]="'warn'" style="margin-right: 4px;" *transloco="let t"
+                  routerLink="/role/role-list">
+                  {{ t('Cancel') }}
+              </button>
+              <button type="submit" [color]="'primary'" [disabled]="!f.valid" mat-flat-button (click)="onSubmit(f)"
+                  *transloco="let t">
+                  {{ t('Save') }}
+              
+              </button>
+              </div>
+          </form>
+      </div>
+  </div>
+</div>

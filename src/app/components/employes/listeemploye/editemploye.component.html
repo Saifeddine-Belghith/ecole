@@ -7,7 +7,7 @@
         <mat-progress-bar [mode]="'indeterminate'"></mat-progress-bar>
     </div>
     <!-- Title -->
-    <div class="text-4xl font-extrabold tracking-tight">Liste Enseignants</div>
+    <div class="text-4xl font-extrabold tracking-tight">Liste Employes</div>
     <!-- Actions -->
     <div class="flex flex-shrink-0 items-center mt-6 sm:mt-0 sm:ml-4">
         <!-- Search -->
@@ -53,9 +53,9 @@
     </ng-container>
 
 
-    <ng-container matColumnDef="matiere">
-      <th mat-header-cell *matHeaderCellDef> Matiere </th>
-      <td mat-cell *matCellDef="let element"> {{element.matiere}} </td>
+    <ng-container matColumnDef="type">
+      <th mat-header-cell *matHeaderCellDef> Type </th>
+      <td mat-cell *matCellDef="let element"> {{element.type}} </td>
     </ng-container>
 
 
@@ -66,8 +66,8 @@
     <ng-container matColumnDef="action">
       <th mat-header-cell *matHeaderCellDef> Action </th>
       <td mat-cell *matCellDef="let element"> 
-          <mat-icon class="icon-size-4" [svgIcon]="'heroicons_solid:trash'"></mat-icon>
-          <mat-icon class="icon-size-4" [svgIcon]="'heroicons_solid:pencil-alt'"></mat-icon>
+          <mat-icon class="icon-size-5" [svgIcon]="'heroicons_solid:trash'" color="warn"></mat-icon>
+          <mat-icon class="icon-size-5" [svgIcon]="'heroicons_solid:pencil-alt'"  color="primary" routerLink="/dashboards/modifieremployes"></mat-icon>
        </td>
     </ng-container>
   

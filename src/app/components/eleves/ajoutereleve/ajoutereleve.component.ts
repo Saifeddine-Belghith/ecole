@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+
 
 
 @Component({
@@ -10,20 +10,11 @@ import { FormBuilder } from '@angular/forms';
 export class AjoutereleveComponent  {
   formFieldHelpers: string[] = [''];
 
-  /**
-   * Constructor
-   */
-  constructor(private _formBuilder: FormBuilder)
+ 
+  constructor()
   {
   }
 
-  // -----------------------------------------------------------------------------------------------------
-  // @ Public methods
-  // -----------------------------------------------------------------------------------------------------
-
-  /**
-   * Get the form field helpers as string
-   */
   getFormFieldHelpersAsString(): string
   {
       return this.formFieldHelpers.join(' ');

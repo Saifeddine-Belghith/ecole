@@ -1,0 +1,104 @@
+<div class="flex flex-col flex-auto min-w-4" style="margin: 30px 30px;">
+<form class="flex flex-col mt-10 p-10 pb-8 bg-card rounded-2xl shadow overflow-hidden">
+    <div class="mt-4 text-4xl font-extrabold tracking-tight leading-tight">Modifier test</div>
+      <br><br>
+
+      <div class="flex flex-col gt-xs:flex-row">
+     
+        <mat-form-field
+              [ngClass]="formFieldHelpers"
+              class="flex-auto gt-xs:pl-3">
+              <mat-label>Nom d'exercices</mat-label>
+              <input matInput>
+              <mat-icon
+                  class="icon-size-5"
+                  matSuffix
+                  ></mat-icon> 
+          </mat-form-field>
+    </div>
+  <div>
+    <div class="flex flex-col gt-xs:flex-row">
+     
+        <mat-form-field
+              [ngClass]="formFieldHelpers"
+              class="flex-auto gt-xs:pl-3">
+              <mat-label>question</mat-label>
+              <input matInput>
+              <mat-icon
+                  class="icon-size-5"
+                  matSuffix
+                  ></mat-icon> 
+          </mat-form-field>
+    </div>
+
+    <div>
+
+    <mat-form-field
+              [ngClass]="formFieldHelpers"
+              class="flex-auto gt-xs:pl-3">
+              <mat-label>Réponse1</mat-label>
+              <input matInput>
+              <mat-icon
+                  class="icon-size-5"
+                  matSuffix
+                  ></mat-icon>
+    </mat-form-field>
+
+
+    <mat-form-field
+              [ngClass]="formFieldHelpers"
+              class="flex-auto gt-xs:pl-3">
+              <mat-label>Réponse2</mat-label>
+              <input matInput>
+              <mat-icon
+                  class="icon-size-5"
+                  matSuffix
+                  ></mat-icon>
+    </mat-form-field>
+
+
+    <mat-form-field
+              [ngClass]="formFieldHelpers"
+              class="flex-auto gt-xs:pl-3">
+              <mat-label>réponse3</mat-label>
+              <input matInput>
+              <mat-icon
+                  class="icon-size-5"
+                  matSuffix
+                  ></mat-icon>
+    </mat-form-field><br>
+
+
+          <div
+                            class="group inline-flex items-center mt-2 -ml-4 py-2 px-4 rounded cursor-pointer"
+                            (click)="ajouterReponse()">
+                            <mat-icon
+                                class="icon-size-5"
+                                [svgIcon]="'heroicons_solid:plus-circle'"></mat-icon>
+                            <span class="ml-2 font-medium text-secondary group-hover:underline">Ajouter reponse</span>
+          </div>
+</div>
+
+ </div> 
+             <div class="group inline-flex items-center mt-2 -ml-4 py-2 px-4 rounded cursor-pointer"
+                            (click)="ajouterQuestion()">
+                            <mat-icon
+                                class="icon-size-5"
+                                [svgIcon]="'heroicons_solid:plus-circle'"></mat-icon>
+                            <span class="ml-2 font-medium text-secondary group-hover:underline">Ajouter question</span>
+             </div>
+      
+     
+         
+     
+      
+      
+      <br>
+      <div class="row" class="contains">
+      <button mat-raised-button color="primary">Modifier</button>
+      <button mat-stroked-button>Annuler</button>
+    </div>
+    </form>
+    </div>
+  
+  

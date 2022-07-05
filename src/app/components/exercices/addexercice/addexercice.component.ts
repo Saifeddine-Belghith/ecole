@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-addexercice',
@@ -6,10 +7,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./addexercice.component.scss']
 })
 export class AddexerciceComponent implements OnInit {
+  formFieldHelpers: string[] = [''];
+ 
+  constructor( ) { }
 
-  constructor() { }
-
-  ngOnInit() {
+  ngOnInit(): void {
+  }
+  getFormFieldHelpersAsString(): string
+  {
+      return this.formFieldHelpers.join(' ');
   }
 
+
+  ajouterQuestion(): void
+  {
+  }
+
+  ajouterReponse(): void
+  {
+  }
 }

@@ -1,5 +1,4 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 
@@ -11,10 +10,7 @@ import { MatTableDataSource } from '@angular/material/table';
 export class EditemployeComponent  {
   formFieldHelpers: string[] = [''];
 
-  /**
-   * Constructor
-   */
-  constructor(private _formBuilder: FormBuilder)
+  constructor()
   {
   }
 
@@ -24,7 +20,7 @@ export class EditemployeComponent  {
       return this.formFieldHelpers.join(' ');
   }
   
-  displayedColumns: string[] = ['id', 'nom', 'prenom', 'email', 'matiere','action'];
+  displayedColumns: string[] = ['id', 'nom', 'prenom', 'email', 'type','action'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -40,15 +36,15 @@ export interface PeriodicElement {
   nom: string;
   prenom: string;
   email:string;
-  matiere:string;
+  type:string;
   
   
   
 }
 const ELEMENT_DATA: PeriodicElement[] = [
-  {id: 1, nom: 'gaddour',  prenom: 'sirine',email:"@exemple.com",matiere:" Cloud"},
-  {id: 2, nom: 'gaddour',  prenom: 'sirine',email:" @exemple.com",matiere:" Big data"},
-  {id: 3, nom: 'gaddour',  prenom: 'sirine',email:" @exemple.com",matiere:" Reseaux"},
-  {id: 4, nom: 'gaddour',  prenom: 'sirine',email:" @exemple.com",matiere:" Multimedia"}];
+  {id: 1, nom: 'exemple',  prenom: 'exemple',email:"@exemple.com",type:" Directeur"},
+  {id: 2, nom: 'exemple',  prenom: 'exemple',email:" @exemple.com",type:" Directeur général"},
+  {id: 3, nom: 'exemple',  prenom: 'exemple',email:" @exemple.com",type:" Directeur"},
+  {id: 4, nom: 'exemple',  prenom: 'exemple',email:" @exemple.com",type:" Directeur général"}];
 
 

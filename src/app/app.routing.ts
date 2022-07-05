@@ -3,8 +3,7 @@ import { AuthGuard } from 'app/core/auth/guards/auth.guard';
 import { NoAuthGuard } from 'app/core/auth/guards/noAuth.guard';
 import { LayoutComponent } from 'app/layout/layout.component';
 import { InitialDataResolver } from 'app/app.resolvers';
-import { AdduserComponent } from './components/users/adduser/adduser.component';
-import { EdituserComponent } from './components/users/edituser/edituser.component';
+
 import { AjouterniveauComponent } from './components/niveaux/ajouterniveau/ajouterniveau.component';
 import { EditniveauComponent } from './components/niveaux/listeniveau/editniveau.component';
 import { AjouterspecialiteComponent } from './components/specialites/ajouterspecialite/ajouterspecialite.component';
@@ -21,12 +20,113 @@ import { AjouteremployeComponent } from './components/employes/ajouteremploye/aj
 import { EditemployeComponent } from './components/employes/listeemploye/editemploye.component';
 import { AdddevoirComponent } from './components/devoirs/ajouterdevoir/adddevoir.component';
 import { AjouterpermissionComponent } from './components/permission/ajouterpermission/ajouterpermission.component';
-import { ListepermissionComponent } from './components/permission/listepermission/listepermission.component';
+
 import { AjouterroleComponent } from './components/role/ajouterrole/ajouterrole.component';
 import { ListeroleComponent } from './components/role/listerole/listerole.component';
 import { AjoutercategorieComponent } from './components/categories/ajoutercategorie/ajoutercategorie.component';
 import { ListecategoriesComponent } from './components/categories/listecategories/listecategories.component';
-
+import { ModifiereleveComponent } from './components/eleves/modifiereleve/modifiereleve.component';
+import { AjouterparentComponent } from './components/parents/ajouterparent/ajouterparent.component';
+import { ModifierparentComponent } from './components/parents/modifierparent/modifierparent.component';
+import { ListeparentComponent } from './components/parents/listeparent/listeparent.component';
+import { AjouterenseignantComponent } from './components/enseignants/ajouterenseignant/ajouterenseignant.component';
+import { ListeenseignantComponent } from './components/enseignants/listeenseignant/listeenseignant.component';
+import { ModifierenseignantComponent } from './components/enseignants/modifierenseignant/modifierenseignant.component';
+import { ModifieremployesComponent } from './components/employes/modifieremployes/modifieremployes.component';
+import { ModifierspecialiteComponent } from './components/specialites/modifierspecialite/modifierspecialite.component';
+import { ModifierniveauComponent } from './components/niveaux/modifierniveau/modifierniveau.component';
+import { ModifierclasseComponent } from './components/classes/modifierclasse/modifierclasse.component';
+import { AjoutermatiereComponent } from './components/matieres/ajoutermatiere/ajoutermatiere.component';
+import { ListematieresComponent } from './components/matieres/listematieres/listematieres.component';
+import { ModifiermatiereComponent } from './components/matieres/modifiermatiere/modifiermatiere.component';
+import { ModifierroleComponent } from './components/role/modifierrole/modifierrole.component';
+import { ContacterComponent } from './components/contacter/contacter.component';
+import { ModifierexerciceComponent } from './components/exercices/modifierexercice/modifierexercice.component';
+import { ModifiercoursComponent } from './components/cours/modifiercours/modifiercours.component';
+import { AjouterReclamationComponent } from './components/reclamation/ajouter-reclamation/ajouter-reclamation.component';
+import { ModifierReclamationComponent } from './components/reclamation/modifier-reclamation/modifier-reclamation.component';
+import { ListReclamationComponent } from './components/reclamation/list-reclamation/list-reclamation.component';
+import { AjoutersalleComponent } from './components/salle/ajoutersalle/ajoutersalle.component';
+import { ModifiersalleComponent } from './components/salle/modifiersalle/modifiersalle.component';
+import { ListsalleComponent } from './components/salle/listsalle/listsalle.component';
+import { AjouterchargeComponent } from './components/charge/ajoutercharge/ajoutercharge.component';
+import { ModifierchargeComponent } from './components/charge/modifiercharge/modifiercharge.component';
+import { ListechargeComponent } from './components/charge/listecharge/listecharge.component';
+import { AjouterinscriptionComponent } from './components/inscription/ajouterinscription/ajouterinscription.component';
+import { ListeinscriptionComponent } from './components/inscription/listeinscription/listeinscription.component';
+import { AjouteremploiComponent } from './components/emploi/ajouteremploi/ajouteremploi.component';
+import { ModifieremploiComponent } from './components/emploi/modifieremploi/modifieremploi.component';
+import { ListeemploiComponent } from './components/emploi/listeemploi/listeemploi.component';
+import { AjouternoteComponent } from './components/note/ajouternote/ajouternote.component';
+import { ModifiernoteComponent } from './components/note/modifiernote/modifiernote.component';
+import { ListenoteComponent } from './components/note/listenote/listenote.component';
+import { AjoutercontactComponent } from './components/contact/ajoutercontact/ajoutercontact.component';
+import { ModifiercontactComponent } from './components/contact/modifiercontact/modifiercontact.component';
+import { ListecontactComponent } from './components/contact/listecontact/listecontact.component';
+import { AjouterredoublantsComponent } from './components/redoublants/ajouterredoublants/ajouterredoublants.component';
+import { ModifierredoublantsComponent } from './components/redoublants/modifierredoublants/modifierredoublants.component';
+import { ListeredoublantsComponent } from './components/redoublants/listeredoublants/listeredoublants.component';
+import { AjoutermaterielsComponent } from './components/materiels/ajoutermateriels/ajoutermateriels.component';
+import { ModifiermaterielsComponent } from './components/materiels/modifiermateriels/modifiermateriels.component';
+import { ListematerielsComponent } from './components/materiels/listemateriels/listemateriels.component';
+import { AjoutercontratComponent } from './components/contrat/ajoutercontrat/ajoutercontrat.component';
+import { ModifiercontratComponent } from './components/contrat/modifiercontrat/modifiercontrat.component';
+import { ListecontratComponent } from './components/contrat/listecontrat/listecontrat.component';
+import { AjouterfmedicalComponent } from './components/fmedical/ajouterfmedical/ajouterfmedical.component';
+import { ModifierfmedicalComponent } from './components/fmedical/modifierfmedical/modifierfmedical.component';
+import { ListefmedicalComponent } from './components/fmedical/listefmedical/listefmedical.component';
+import { AjouterformationscandidatsComponent } from './components/formationscandidats/ajouterformationscandidats/ajouterformationscandidats.component';
+import { ModifierformationscandidatsComponent } from './components/formationscandidats/modifierformationscandidats/modifierformationscandidats.component';
+import { ListeformationscandidatsComponent } from './components/formationscandidats/listeformationscandidats/listeformationscandidats.component';
+import { AjouterformationsprofesseurComponent } from './components/formationsprofesseur/ajouterformationsprofesseur/ajouterformationsprofesseur.component';
+import { ModifierformationsprofesseurComponent } from './components/formationsprofesseur/modifierformationsprofesseur/modifierformationsprofesseur.component';
+import { ListeformationsprofesseurComponent } from './components/formationsprofesseur/listeformationsprofesseur/listeformationsprofesseur.component';
+import { AjoutergarderieComponent } from './components/garderie/ajoutergarderie/ajoutergarderie.component';
+import { ModifiergarderieComponent } from './components/garderie/modifiergarderie/modifiergarderie.component';
+import { ListegarderieComponent } from './components/garderie/listegarderie/listegarderie.component';
+import { AjouterjoursferiesvacancesComponent } from './components/joursferiesvacances/ajouterjoursferiesvacances/ajouterjoursferiesvacances.component';
+import { ModifierjoursferiesvacancesComponent } from './components/joursferiesvacances/modifierjoursferiesvacances/modifierjoursferiesvacances.component';
+import { ListjoursferiesvacancesComponent } from './components/joursferiesvacances/listjoursferiesvacances/listjoursferiesvacances.component';
+import { AjouterpresencesprofesseursComponent } from './components/presencesprofesseurs/ajouterpresencesprofesseurs/ajouterpresencesprofesseurs.component';
+import { ModifierpresencesprofesseursComponent } from './components/presencesprofesseurs/modifierpresencesprofesseurs/modifierpresencesprofesseurs.component';
+import { ListpresencesprofesseursComponent } from './components/presencesprofesseurs/listpresencesprofesseurs/listpresencesprofesseurs.component';
+import { AjouterpresenceselevesComponent } from './components/presenceseleves/ajouterpresenceseleves/ajouterpresenceseleves.component';
+import { ModifierpresenceselevesComponent } from './components/presenceseleves/modifierpresenceseleves/modifierpresenceseleves.component';
+import { ListpresenceselevesComponent } from './components/presenceseleves/listpresenceseleves/listpresenceseleves.component';
+import { AjouterrendezvousComponent } from './components/rendezvous/ajouterrendezvous/ajouterrendezvous.component';
+import { ModifierrendezvousComponent } from './components/rendezvous/modifierrendezvous/modifierrendezvous.component';
+import { ListrendezvousComponent } from './components/rendezvous/listrendezvous/listrendezvous.component';
+import { AjouterformateursexterneComponent } from './components/formateursexterne/ajouterformateursexterne/ajouterformateursexterne.component';
+import { ModifierformateursexterneComponent } from './components/formateursexterne/modifierformateursexterne/modifierformateursexterne.component';
+import { ListformateursexterneComponent } from './components/formateursexterne/listformateursexterne/listformateursexterne.component';
+import { AjouterplanningComponent } from './components/planning/ajouterplanning/ajouterplanning.component';
+import { ModifierplanningComponent } from './components/planning/modifierplanning/modifierplanning.component';
+import { ListplanningComponent } from './components/planning/listplanning/listplanning.component';
+import { AjouterSatisfactionComponent } from './components/Satisfaction/ajouter-satisfaction/ajouter-satisfaction.component';
+import { ModifierSatisfactionComponent } from './components/Satisfaction/modifier-satisfaction/modifier-satisfaction.component';
+import { ListSatisfactionComponent } from './components/Satisfaction/list-satisfaction/list-satisfaction.component';
+import { AjouterinfirmerieComponent } from './components/infirmerie/ajouterinfirmerie/ajouterinfirmerie.component';
+import { ModifierinfirmerieComponent } from './components/infirmerie/modifierinfirmerie/modifierinfirmerie.component';
+import { ListinfirmerieComponent } from './components/infirmerie/listinfirmerie/listinfirmerie.component';
+import { AjouterpaiementComponent } from './components/paiement/ajouterpaiement/ajouterpaiement.component';
+import { ModifierpaiementComponent } from './components/paiement/modifierpaiement/modifierpaiement.component';
+import { ListpaiementComponent } from './components/paiement/listpaiement/listpaiement.component';
+import { EditdevoirComponent } from './components/devoirs/listedevoir/editdevoir.component';
+import { AjouterpointageComponent } from './components/pointage/ajouterpointage/ajouterpointage.component';
+import { ModifierpointageComponent } from './components/pointage/modifierpointage/modifierpointage.component';
+import { ListepointageComponent } from './components/pointage/listepointage/listepointage.component';
+import { AjouteravertissementComponent } from './components/avertissement/ajouteravertissement/ajouteravertissement.component';
+import { ModifieravertissementComponent } from './components/avertissement/modifieravertissement/modifieravertissement.component';
+import { ListeavertissementComponent } from './components/avertissement/listeavertissement/listeavertissement.component';
+import { AjouterLivretComponent } from './components/Livret/ajouter-livret/ajouter-livret.component';
+import { ModifierLivretComponent } from './components/Livret/modifier-livret/modifier-livret.component';
+import { ListeLivretComponent } from './components/Livret/liste-livret/liste-livret.component';
+import { AjouterfournitureComponent } from './components/fourniture/ajouterfourniture/ajouterfourniture.component';
+import { ModifierfournitureComponent } from './components/fourniture/modifierfourniture/modifierfourniture.component';
+import { ListefournitureComponent } from './components/fourniture/listefourniture/listefourniture.component';
+import { AjouteruserComponent } from './components/user/ajouteruser/ajouteruser.component';
+import { ModifieruserComponent } from './components/user/modifieruser/modifieruser.component';
+import { ListeuserComponent } from './components/user/listeuser/listeuser.component';
 // @formatter:off
 /* eslint-disable max-len */
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
@@ -104,10 +204,9 @@ export const appRoutes: Route[] = [
                 {path: 'analytics', loadChildren: () => import('app/modules/admin/dashboards/analytics/analytics.module').then(m => m.AnalyticsModule)},
                 {path: 'finance', loadChildren: () => import('app/modules/admin/dashboards/finance/finance.module').then(m => m.FinanceModule)},
                 {path: 'crypto', loadChildren: () => import('app/modules/admin/dashboards/crypto/crypto.module').then(m => m.CryptoModule)},
-            
-            
-                { path: 'adduser', component:AdduserComponent },
-                { path: 'edituser', component:EdituserComponent},
+                { path: 'Ajouteruser', component:AjouteruserComponent },
+                { path: 'modifieruser', component:ModifieruserComponent },
+                { path: 'listeuser', component:ListeuserComponent },
                 { path: 'addniveau', component:AjouterniveauComponent },
                 { path: 'editniveau', component:EditniveauComponent},
                 { path: 'addspecialite', component:AjouterspecialiteComponent },
@@ -120,17 +219,222 @@ export const appRoutes: Route[] = [
                 { path: 'editexercice', component:EditexerciceComponent},
                 { path: 'addeleve', component:AjoutereleveComponent },
                 { path: 'editeleve', component:EditeleveComponent},
+                { path: 'listeeleve', component:ModifiereleveComponent},
                 { path: 'addemployes', component:AjouteremployeComponent },
                 { path: 'editemployes', component:EditemployeComponent},
+                { path: 'listeemployes', component:ModifieremployesComponent},
                 { path: 'adddevoir', component:AdddevoirComponent },
+                { path: 'editdevoir', component:EditdevoirComponent },
                 { path: 'addpermission', component:AjouterpermissionComponent },
-                { path: 'listepermission', component:ListepermissionComponent },
                 { path: 'addrole', component:AjouterroleComponent },
                 { path: 'listerole', component:ListeroleComponent },
                 { path: 'addcategories', component:AjoutercategorieComponent },
                 { path: 'listecategories', component:ListecategoriesComponent },
-          
-            
+                { path: 'modifiereleve', component:ModifiereleveComponent },
+                { path: 'ajouterparent', component:AjouterparentComponent },
+                { path: 'modifierparent', component:ModifierparentComponent },
+                { path: 'listeparent', component:ListeparentComponent },
+                { path: 'ajouterenseignant', component:AjouterenseignantComponent },
+                { path: 'listeenseignant', component:ListeenseignantComponent },
+                { path: 'modifierenseignant', component:ModifierenseignantComponent },
+                { path: 'modifieremployes', component:ModifieremployesComponent },
+                { path: 'modifierspecialite', component:ModifierspecialiteComponent },
+                { path: 'modifierniveau', component:ModifierniveauComponent },
+                { path: 'modifierclasse', component:ModifierclasseComponent },
+                { path: 'ajoutermatiere', component:AjoutermatiereComponent },
+                { path: 'listematieres', component:ListematieresComponent },
+                { path: 'modifiermatiere', component:ModifiermatiereComponent },
+                { path: 'modifierrole', component:ModifierroleComponent },
+                { path: 'contact', component:ContacterComponent },
+                { path: 'modifierexercice', component:ModifierexerciceComponent },
+                { path: 'Modifiercours', component:ModifiercoursComponent },
+                { path: 'ajouterreclamation', component:AjouterReclamationComponent },
+                { path: 'listreclamation', component:ListReclamationComponent },
+                { path: 'modifierreclamation', component:ModifierReclamationComponent},
+                { path: 'ajoutersalle', component:AjoutersalleComponent},
+                { path: 'modifiersalle', component:ModifiersalleComponent},
+                { path: 'listesalle', component: ListsalleComponent},
+                { path: 'ajoutercharge', component: AjouterchargeComponent},
+                { path: 'modifiercharege', component: ModifierchargeComponent},
+                { path: 'listecharege', component: ListechargeComponent},
+                { path: 'ajouterinscription', component: AjouterinscriptionComponent},
+                { path: 'listeinscription', component: ListeinscriptionComponent},
+                { path: 'ajouteremploi', component: AjouteremploiComponent},
+                { path: 'modifieremploi', component: ModifieremploiComponent},
+                { path: 'listeemploi', component: ListeemploiComponent},
+                { path: 'ajouternote', component: AjouternoteComponent},
+                { path: 'modifiernote', component: ModifiernoteComponent},
+                { path: 'listenote', component: ListenoteComponent},
+                { path: 'ajoutercontact', component: AjoutercontactComponent},
+                { path: 'modifiercontact', component: ModifiercontactComponent},
+                { path: 'listecontact', component: ListecontactComponent},
+                { path: 'ajouterredoublants', component: AjouterredoublantsComponent},
+                { path: 'modifierredoublants', component: ModifierredoublantsComponent},
+                { path: 'listeredoublants', component: ListeredoublantsComponent},
+                { path: 'ajoutermateriels', component: AjoutermaterielsComponent},
+                { path: 'modifiermateriels', component: ModifiermaterielsComponent},
+                { path: 'listemateriels', component: ListematerielsComponent},
+                { path: 'ajoutercontrat', component: AjoutercontratComponent},
+                { path: 'modifiercontrat', component: ModifiercontratComponent},
+                { path: 'listecontrat', component: ListecontratComponent},
+                { path: 'ajouterfmedical', component: AjouterfmedicalComponent},
+                { path: 'modifierfmedical', component: ModifierfmedicalComponent},
+                { path: 'listefmedical', component: ListefmedicalComponent},
+                { path: 'ajouterenseignant', component: AjouterenseignantComponent},
+                { path: 'modifierenseignant', component: ModifierenseignantComponent},
+                { path: 'listeenseignant', component: ListeenseignantComponent},
+                { path: 'ajouterformationscandidats', component: AjouterformationscandidatsComponent},
+                { path: 'modifierformationscandidats', component: ModifierformationscandidatsComponent},
+                { path: 'listeformationscandidats', component: ListeformationscandidatsComponent},
+                { path: 'ajouterformationsprofesseur', component: AjouterformationsprofesseurComponent},
+                { path: 'modifierformationsprofesseur', component: ModifierformationsprofesseurComponent},
+                { path: 'listeformationsprofesseur', component: ListeformationsprofesseurComponent},
+                { path: 'ajoutergarderie', component: AjoutergarderieComponent},
+                { path: 'modifiergarderie', component: ModifiergarderieComponent},
+                { path: 'listegarderie', component: ListegarderieComponent},
+                { path: 'ajouterjoursferiesvacances', component: AjouterjoursferiesvacancesComponent},
+                { path: 'modifierjoursferiesvacances', component: ModifierjoursferiesvacancesComponent},
+                { path: 'listjoursferiesvacances', component: ListjoursferiesvacancesComponent},
+                { path: 'ajouterpresencesprofesseurs', component: AjouterpresencesprofesseursComponent},
+                { path: 'modifierpresencesprofesseurs', component: ModifierpresencesprofesseursComponent},
+                { path: 'listpresencesprofesseurs', component: ListpresencesprofesseursComponent},
+                { path: 'ajouterpresenceseleves', component: AjouterpresenceselevesComponent},
+                { path: 'modifierpresenceseleves', component: ModifierpresenceselevesComponent},
+                { path: 'listpresenceseleves', component: ListpresenceselevesComponent},
+                { path: 'ajouterrendezvous', component: AjouterrendezvousComponent},
+                { path: 'modifierrendezvous', component: ModifierrendezvousComponent},
+                { path: 'listrendezvous', component: ListrendezvousComponent},
+                { path: 'ajouterformateursexterne', component: AjouterformateursexterneComponent},
+                { path: 'modifierformateursexterne', component: ModifierformateursexterneComponent},
+                { path: 'listformateursexterne', component: ListformateursexterneComponent},
+                { path: 'ajouterplanning', component: AjouterplanningComponent},
+                { path: 'modifierplanning', component: ModifierplanningComponent},
+                { path: 'listplanning', component: ListplanningComponent},
+                { path: 'ajouter-satisfaction', component: AjouterSatisfactionComponent},
+                { path: 'modifier-satisfaction', component: ModifierSatisfactionComponent},
+                { path: 'list-satisfaction', component: ListSatisfactionComponent},
+                { path: 'ajouterinfirmerie', component: AjouterinfirmerieComponent},
+                { path: 'modifierinfirmerie', component: ModifierinfirmerieComponent},
+                { path: 'listinfirmerie', component: ListinfirmerieComponent},
+                { path: 'ajouterpaiement', component: AjouterpaiementComponent},
+                { path: 'modifierpaiement', component: ModifierpaiementComponent},
+                { path: 'listpaiement', component: ListpaiementComponent},
+                { path: 'ajouterpointage', component: AjouterpointageComponent},
+                { path: 'modifierpointage', component:ModifierpointageComponent},
+                { path: 'listepointage', component:ListepointageComponent},
+                { path: 'ajouteravertissement', component:AjouteravertissementComponent},
+                { path: 'modifieravertissement', component:ModifieravertissementComponent},
+                { path: 'listeavertissement', component:ListeavertissementComponent},
+                { path: 'ajouterLivret', component:AjouterLivretComponent},
+                { path: 'modifierLivret', component:ModifierLivretComponent},
+                { path: 'listeLivret', component:ListeLivretComponent},
+                { path: 'ajouterfourniture', component:AjouterfournitureComponent},
+                { path: 'modifierfourniture', component:ModifierfournitureComponent},
+                { path: 'listefourniture', component:ListefournitureComponent},
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
             ]},
 
             // Apps
@@ -142,7 +446,7 @@ export const appRoutes: Route[] = [
 
 
                 {path: 'academy', loadChildren: () => import('app/modules/admin/apps/academy/academy.module').then(m => m.AcademyModule)},
-                {path: 'chat', loadChildren: () => import('app/modules/admin/apps/chat/chat.module').then(m => m.ChatModule)},
+ 
                 {path: 'contacts', loadChildren: () => import('app/modules/admin/apps/contacts/contacts.module').then(m => m.ContactsModule)},
                 {path: 'ecommerce', loadChildren: () => import('app/modules/admin/apps/ecommerce/ecommerce.module').then(m => m.ECommerceModule)},
                 {path: 'file-manager', loadChildren: () => import('app/modules/admin/apps/file-manager/file-manager.module').then(m => m.FileManagerModule)},

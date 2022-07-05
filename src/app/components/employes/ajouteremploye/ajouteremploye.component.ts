@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+
 
 @Component({
   selector: 'app-ajouteremploye',
@@ -9,24 +9,11 @@ import { FormBuilder } from '@angular/forms';
 export class AjouteremployeComponent  {
   formFieldHelpers: string[] = [''];
 
-  displayedColumns: string[] = ['classe'];
-
-
-
-  /**
-   * Constructor
-   */
-  constructor(private _formBuilder: FormBuilder)
+  constructor()
   {
   }
 
-  // -----------------------------------------------------------------------------------------------------
-  // @ Public methods
-  // -----------------------------------------------------------------------------------------------------
 
-  /**
-   * Get the form field helpers as string
-   */
   getFormFieldHelpersAsString(): string
   {
       return this.formFieldHelpers.join(' ');

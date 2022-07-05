@@ -1,0 +1,45 @@
+<div class="flex flex-col flex-auto min-w-4">
+
+
+    <form class="flex flex-col mt-10 p-10 pb-8 bg-card rounded-2xl shadow overflow-hidden">
+    <div class="mt-4 text-4xl font-extrabold tracking-tight leading-tight">Contact</div>
+      <br><br>
+     
+    
+      
+      <mat-form-field
+              [ngClass]="formFieldHelpers"
+              class="flex-auto gt-xs:pr-3">
+              <mat-label>Nom et prenom</mat-label>
+              <input matInput 
+              >
+              <mat-icon
+                  class="icon-size-5"
+                  matSuffix
+                  [svgIcon]="''"></mat-icon>
+          </mat-form-field>
+          <div class="flex">
+            <mat-form-field
+                [ngClass]="formFieldHelpers"
+                class="fuse-mat-textarea flex-auto">
+                <mat-label>Message</mat-label>
+                <textarea
+                    matInput
+                    [rows]="3"
+                    matTextareaAutosize></textarea>
+                <mat-icon
+                    class="icon-size-5"
+                    matSuffix
+                    [svgIcon]="''"></mat-icon>
+            </mat-form-field>
+        </div>
+     
+      
+      <br>
+      <div class="row" class="contains">
+      <button mat-raised-button color="primary">Envoyer</button>
+      <button mat-stroked-button>Annuler</button>
+    </div>
+    </form>
+    </div>
+

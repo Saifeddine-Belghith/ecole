@@ -1,3 +1,80 @@
-<p>
-  editcours works!
-</p>
+<div class="flex flex-col flex-auto min-w-4" style="margin: 30px 30px;" >
+  <div class="relative flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between py-8 px-6 md:px-8 border-b">
+    <!-- Loader -->
+    <div
+    class="absolute inset-x-0 bottom-0"
+        *ngIf="">
+        <mat-progress-bar [mode]="'indeterminate'"></mat-progress-bar>
+    </div>
+    <!-- Title -->
+    <div class="text-4xl font-extrabold tracking-tight">Liste Cours</div>
+    <!-- Actions -->
+    <div class="flex flex-shrink-0 items-center mt-6 sm:mt-0 sm:ml-4">
+        <!-- Search -->
+        <mat-form-field class="fuse-mat-dense fuse-mat-no-subscript fuse-mat-rounded min-w-64">
+            <mat-icon
+                class="icon-size-5"
+                matPrefix
+                [svgIcon]="'heroicons_solid:search'"></mat-icon>
+            <input
+                matInput
+                
+                [autocomplete]="'off'"
+                [placeholder]="'Recherche '">
+        </mat-form-field>
+        <!-- Add product button -->
+       
+    </div>
+</div>
+  <table  mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+
+ 
+
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Id </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="chapitre">
+      <th mat-header-cell *matHeaderCellDef> Chapitre</th>
+      <td mat-cell *matCellDef="let element"> {{element.chapitre}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="exercice">
+      <th mat-header-cell *matHeaderCellDef> Exercice</th>
+      <td mat-cell *matCellDef="let element"> {{element.exercice}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="cours">
+      <th mat-header-cell *matHeaderCellDef> Cours</th>
+      <td mat-cell *matCellDef="let element"> {{element.cours}} </td>
+    </ng-container>
+   
+
+
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef> Action </th>
+      <td mat-cell *matCellDef="let element"> 
+          <mat-icon class="icon-size-5" [svgIcon]="'heroicons_solid:trash'" color="warn"></mat-icon>
+          <mat-icon class="icon-size-5" [svgIcon]="'heroicons_solid:pencil-alt'" color="primary" routerLink="/dashboards/modifiercours"></mat-icon>
+       </td>
+    </ng-container>
+  
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator class="mat-elevation-z8" [pageSizeOptions]="[5, 10, 20]"
+                 showFirstLastButtons 
+                 aria-label="Select page of periodic elements">
+  </mat-paginator>
+</div>
+
+

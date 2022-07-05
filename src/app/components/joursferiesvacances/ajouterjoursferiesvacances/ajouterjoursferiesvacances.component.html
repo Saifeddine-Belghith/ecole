@@ -1,0 +1,27 @@
+<div class="flex flex-col flex-auto min-w-4" style="margin: 30px 30px;">
+    <form class="flex flex-col mt-10 p-10 pb-8 bg-card rounded-2xl shadow overflow-hidden">
+        <div class="mt-4 text-4xl font-extrabold tracking-tight leading-tight">Ajouter jours féries /vacances</div>
+          <br><br>
+        <div class="flex flex-col gt-xs:flex-row">
+              <mat-form-field
+                  [ngClass]="formFieldHelpers"
+                  class="flex-auto gt-xs:pr-3">
+                  <mat-label>Titre</mat-label>
+                  <input matInput>
+              </mat-form-field>
+              <mat-form-field appearance="fill">
+                <mat-label>Date </mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            </div>
+
+
+
+
+            <br>
+      <div class="row" class="contains">
+        <button mat-raised-button color="primary">Ajouter</button>
+        <button mat-stroked-button>Annuler</button>
+      </div>
